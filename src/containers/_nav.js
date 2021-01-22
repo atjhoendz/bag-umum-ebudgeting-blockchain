@@ -19,8 +19,12 @@ export default [
         icon: 'cil-drop',
         items: [
           {
+            name: 'Lihat Data',
+            to: '/data-pemohon'
+          },
+          {
             name: 'Tambah Data',
-            to: '/'
+            to: '/data-pemohon/tambah'
           }
         ]
       },
