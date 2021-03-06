@@ -14,6 +14,7 @@ export const routes = [
     redirect: '/dashboard',
     name: 'Home',
     component: TheContainer,
+    meta: { isAuth: true },
     children: [
       {
         path: 'dashboard',
