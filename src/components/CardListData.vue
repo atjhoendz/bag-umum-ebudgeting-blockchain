@@ -29,12 +29,11 @@
         sorter
         pagination
         border
+        :loading="isLoading"
       >
-        <template #proses="{index}">
+        <template #proses="{item, index}">
           <td>
-            <CButtonGroup>
-              <CButton color="danger" :to="deleteByID(index)">Hapus</CButton>
-            </CButtonGroup>
+            <slot name="proses" :item="item" :index="index"> </slot>
           </td>
         </template>
         <template #no="{index}">
@@ -42,21 +41,19 @@
             {{ index + 1 }}
           </td>
         </template>
-        <template #no-spd="{index}">
+        <template #nomor_spd="{item}">
           <td>
-            <CButton :to="inputSpd(index)" color="primary" size="sm"
-              >Input No. SPD</CButton
-            >
+            <slot name="nomor_spd" :item="item"></slot>
           </td>
         </template>
-        <template #bukti-spd>
+        <template #bukti_spd="{item, index}">
           <td>
-            <CSelect :options="options" placeholder="Pilih" size="sm"></CSelect>
+            <slot name="bukti_spd" :item="item" :index="index"></slot>
           </td>
         </template>
-        <template #status-berkas>
+        <template #status_berkas="{item, index}">
           <td>
-            <CSelect :options="options" placeholder="Pilih" size="sm"></CSelect>
+            <slot name="status_berkas" :item="item" :index="index"></slot>
           </td>
         </template>
       </CDataTable>
@@ -66,7 +63,7 @@
 
 <script>
 export default {
-  name: "CardListData",
+  name: 'CardListData',
   props: {
     title: {
       type: String,
@@ -88,29 +85,14 @@ export default {
       type: Array,
       required: true,
     },
-  },
-  data() {
-    return {
-      options: [
-        { label: "Ada", value: "Ada" },
-        { label: "Tidak ada", value: "Tidak ada" },
-      ],
-    };
+    isLoading: {
+      type: Boolean,
+      default: false,
+    },
   },
   computed: {
     urlTambahData: function() {
-      return this.routeEndpoint + "/tambah";
-    },
-  },
-  methods: {
-    editByID(id) {
-      return `${this.routeEndpoint}/edit?id=${id}`;
-    },
-    deleteByID(id) {
-      return `${this.routeEndpoint}/hapus?id=${id}`;
-    },
-    inputSpd(id) {
-      return `${this.routeEndpoint}/input-spd?id=${id}`;
+      return this.routeEndpoint + '/tambah';
     },
   },
 };
