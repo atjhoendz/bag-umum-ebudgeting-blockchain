@@ -28,6 +28,7 @@ export const routes = [
     name: 'Data Pemohon',
     redirect: '/data-pemohon',
     component: TheContainer,
+    meta: { isAuth: true },
     children: [
       {
         path: '/',
@@ -47,7 +48,7 @@ export const routes = [
   },
   {
     path: '/login',
-    name: 'LoginPage',
+    name: 'Login',
     component: LoginPage,
   },
 ];

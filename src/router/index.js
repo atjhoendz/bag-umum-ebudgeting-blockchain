@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import { checkAccessMiddleware } from './middleware';
 
 import { routes } from './routes';
 
@@ -11,5 +12,7 @@ const router = new Router({
   scrollBehavior: () => ({ y: 0 }),
   routes,
 });
+
+router.beforeEach(checkAccessMiddleware);
 
 export default router;
