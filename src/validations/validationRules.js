@@ -40,6 +40,9 @@ export const pemohonValidations = {
     nama_lembaga: {
       required,
     },
+    nomor_spd: {
+      required,
+    },
   },
   userFormData: {
     nip: {
