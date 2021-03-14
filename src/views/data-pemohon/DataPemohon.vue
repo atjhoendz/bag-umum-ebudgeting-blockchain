@@ -183,7 +183,6 @@ export default {
         this.formData.bukti_spd = this.buktiSpd;
         this.formData.status_berkas = this.statusBerkas;
 
-        // console.log(this.formData);
         const result = await PemohonService.update(key, this.formData);
 
         const toast = {
