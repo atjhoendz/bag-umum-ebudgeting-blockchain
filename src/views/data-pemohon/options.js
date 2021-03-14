@@ -41,6 +41,27 @@ export const golonganOptions = [
   { label: 'IV B', value: 'IV B' },
   { label: 'IV C', value: 'IV C' },
   { label: 'IV D', value: 'IV D' },
+  { label: 'IV E', value: 'IV E' },
+];
+
+export const namaPangkat = [
+  { label: 'Juru Muda', value: 'Juru Muda' },
+  { label: 'Juru Muda Tingkat 1', value: 'Juru Muda Tingkat 1' },
+  { label: 'Juru', value: 'Juru' },
+  { label: 'Juru Tingkat 1', value: 'Juru Tingkat 1' },
+  { label: 'Pengatur Muda', value: 'Pengatur Muda' },
+  { label: 'Pengatur Muda Tingkat 1', value: 'Pengatur Muda Tingkat 1' },
+  { label: 'Pengatur', value: 'Pengatur' },
+  { label: 'Pengatur Tingkat 1', value: 'Pengatur Tingkat 1' },
+  { label: 'Penata Muda', value: 'Penata Muda' },
+  { label: 'Penata Muda Tingkat 1', value: 'Penata Muda Tingkat 1' },
+  { label: 'Penata', value: 'Penata' },
+  { label: 'Penata Tingkat 1', value: 'Penata Tingkat 1' },
+  { label: 'Pembina', value: 'Pembina' },
+  { label: 'Pembina Tingkat 1', value: 'Pembina Tingkat 1' },
+  { label: 'Pembina Utama Muda', value: 'Pembina Utama Muda' },
+  { label: 'Pembina Utama Madya', value: 'Pembina Utama Madya' },
+  { label: 'Pembina Utama', value: 'Pembina Utama' },
 ];
 
 export const fields = [
