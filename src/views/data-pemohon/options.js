@@ -24,6 +24,25 @@ export const statusBerkasOptions = [
   },
 ];
 
+export const golonganOptions = [
+  { label: 'I A', value: 'I A' },
+  { label: 'I B', value: 'I B' },
+  { label: 'I C', value: 'I C' },
+  { label: 'I D', value: 'I D' },
+  { label: 'II A', value: 'II A' },
+  { label: 'II B', value: 'II B' },
+  { label: 'II C', value: 'II C' },
+  { label: 'II D', value: 'II D' },
+  { label: 'III A', value: 'III A' },
+  { label: 'III B', value: 'III B' },
+  { label: 'III C', value: 'III C' },
+  { label: 'III D', value: 'III D' },
+  { label: 'IV A', value: 'IV A' },
+  { label: 'IV B', value: 'IV B' },
+  { label: 'IV C', value: 'IV C' },
+  { label: 'IV D', value: 'IV D' },
+];
+
 export const fields = [
   {
     key: 'no',

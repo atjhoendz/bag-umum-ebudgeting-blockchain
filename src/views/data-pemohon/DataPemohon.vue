@@ -110,6 +110,8 @@ export default {
         status_berkas: '',
         alasan_ditolak: '',
         nama_lembaga: '',
+        username: '',
+        password: '',
       },
     };
   },
