@@ -113,14 +113,20 @@
           <CInput
             label="Password"
             placeholder="Masukkan password"
-            type="password"
+            :type="typePassword"
             description="Digunakan untuk login oleh pemohon."
             v-model.trim="$v.userFormData.password.$model"
             :is-valid="validate('userFormData', 'password')"
             :invalid-feedback="passwordMsg"
             :readonly="readOnly"
             @keyup.enter="addData"
-          ></CInput>
+          >
+            <template #append-content>
+              <div @click="showPassword" class="inputPwd">
+                {{ isPasswordShow ? 'hide' : 'show' }}
+              </div>
+            </template>
+          </CInput>
         </CCol>
       </CRow>
       <CSpinner color="info" v-if="isLoading" />
@@ -175,6 +181,7 @@ export default {
       readOnly: true,
       golonganOptions,
       lembagaOptions: [],
+      isPasswordShow: false,
     };
   },
   validations: pemohonValidations,
@@ -209,6 +216,10 @@ export default {
         return ValidationMessage.password('huruf', 'angka');
       }
       return null;
+    },
+    typePassword() {
+      if (this.isPasswordShow) return 'text';
+      return 'password';
     },
   },
   methods: {
@@ -284,6 +295,10 @@ export default {
 
       this.isLoading = false;
     },
+    showPassword() {
+      console.log('halo');
+      this.isPasswordShow = !this.isPasswordShow;
+    },
   },
   async mounted() {
     await this.getDataOptions();
@@ -291,4 +306,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.inputPwd:hover {
+  cursor: pointer;
+}
+</style>
