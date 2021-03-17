@@ -8,20 +8,47 @@
       </CWidgetSimple>
     </CCol>
     <CCol sm="12" lg="3">
-      <CWidgetSimple header="Data Pemohon" :text="jumlahDataPemohon">
+      <CWidgetSimple header="Data Pemohon" :text="jmlDataPemohon">
+        <CSpinner color="info" v-if="isLoading && !jmlDataPemohon" />
       </CWidgetSimple>
     </CCol>
+    <toast-msg :listToasts="listToasts" />
   </CRow>
 </template>
 
 <script>
-import { itemsPemohon } from "../sample-data/data";
+import { PemohonService } from '../services/pemohon.service';
+import ToastMsg from '../components/ToastMsg';
 export default {
-  name: "Dashboard",
-  computed: {
-    jumlahDataPemohon() {
-      return `${itemsPemohon.length}`;
+  name: 'Dashboard',
+  components: {
+    ToastMsg,
+  },
+  data: () => ({
+    jmlDataPemohon: '',
+    isLoading: false,
+    listToasts: [],
+  }),
+  methods: {
+    async getCountData() {
+      this.isLoading = true;
+      try {
+        const data = await PemohonService.getCountData();
+
+        this.jmlDataPemohon = data.toString();
+      } catch (err) {
+        const toast = {
+          message:
+            'Terjadi masalah. Jumlah data pemohon tidak berhasil didapatkan.',
+          color: 'danger',
+        };
+        this.listToasts.push(toast);
+      }
+      this.isLoading = false;
     },
+  },
+  async mounted() {
+    await this.getCountData();
   },
 };
 </script>
