@@ -122,7 +122,7 @@
             @keyup.enter="addData"
           >
             <template #append-content>
-              <div @click="showPassword" class="inputPwd">
+              <div @click="isPasswordShow = !isPasswordShow" class="inputPwd">
                 {{ isPasswordShow ? 'hide' : 'show' }}
               </div>
             </template>
@@ -283,7 +283,6 @@ export default {
 
         return this.$router.push({ path: '/data-pemohon' });
       } catch (err) {
-        console.log(err.response);
         const toast = {
           message:
             err?.response?.data?.message ||
@@ -294,10 +293,6 @@ export default {
       }
 
       this.isLoading = false;
-    },
-    showPassword() {
-      console.log('halo');
-      this.isPasswordShow = !this.isPasswordShow;
     },
   },
   async mounted() {
