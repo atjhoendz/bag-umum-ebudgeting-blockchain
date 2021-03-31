@@ -6,7 +6,7 @@
           <CInput
             label="No. SPD"
             placeholder="Masukkan No. SPD"
-            v-model.trim="$v.pemohonFormData.nomor_spd.$model"
+            v-model.trim="$v.nomor_spd.$model"
             :is-valid="validate('nomor_spd')"
             invalid-feedback="Nomor SPD harus diisi."
             :readonly="readOnly"
@@ -52,6 +52,7 @@ export default {
         alasan_ditolak: '',
         nama_lembaga: '',
       },
+      nomor_spd: '',
       listToasts: [],
       isLoading: false,
       readOnly: true,
@@ -60,8 +61,8 @@ export default {
   validations: pemohonValidations,
   methods: {
     validate(type) {
-      if (this.$v.pemohonFormData[type].$error) {
-        return !this.$v.pemohonFormData[type].$invalid;
+      if (this.$v[type].$error) {
+        return !this.$v[type].$invalid;
       }
       return null;
     },
@@ -91,6 +92,8 @@ export default {
       this.isLoading = true;
 
       try {
+        this.pemohonFormData.nomor_spd = this.nomor_spd;
+
         const response = await PemohonService.update(
           this.$route.query.id,
           this.pemohonFormData,

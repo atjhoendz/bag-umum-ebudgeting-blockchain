@@ -22,6 +22,10 @@ export const statusBerkasOptions = [
     label: 'Biro AUPK',
     value: 'Biro AUPK',
   },
+  {
+    label: 'Dalam Proses Pelaksanaan',
+    value: 'Dalam Proses Pelaksanaan',
+  },
 ];
 
 export const golonganOptions = [

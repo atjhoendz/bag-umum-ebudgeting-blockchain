@@ -40,9 +40,6 @@ export const pemohonValidations = {
     nama_lembaga: {
       required,
     },
-    nomor_spd: {
-      required,
-    },
   },
   userFormData: {
     nip: {
@@ -62,5 +59,8 @@ export const pemohonValidations = {
         return /[a-z]/.test(password) && /[0-9]/.test(password);
       },
     },
+  },
+  nomor_spd: {
+    required,
   },
 };
