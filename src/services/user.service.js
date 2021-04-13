@@ -1,17 +1,14 @@
 /* eslint-disable no-useless-catch */
-import { BaseService } from './base.service';
+import axiosService from './axios.service';
 
-export class UserService extends BaseService {
+export class UserService {
   static get entity() {
     return 'user';
   }
 
   static async addData(formData) {
     try {
-      const response = await this.request({ auth: true }).post(
-        this.entity,
-        formData,
-      );
+      const response = await axiosService.post(this.entity, formData);
 
       return response.data;
     } catch (err) {

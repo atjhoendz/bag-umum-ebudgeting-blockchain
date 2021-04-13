@@ -1,14 +1,14 @@
 /* eslint-disable no-useless-catch */
-import { BaseService } from './base.service';
+import axiosService from './axios.service';
 
-export class LembagaService extends BaseService {
+export class LembagaService {
   static get entity() {
     return 'lembaga';
   }
 
   static async getAll() {
     try {
-      const response = await this.request({ auth: true }).get(this.entity);
+      const response = await axiosService.get(this.entity);
 
       return response.data.data;
     } catch (err) {
