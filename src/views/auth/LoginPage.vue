@@ -100,10 +100,11 @@ export default {
           password: this.password,
         });
 
-        if (result == 401)
+        if (result == 401) {
+          this.isLoading = false;
           return (this.message =
             'Login tidak berhasil. Anda tidak memiliki akses.');
-
+        }
         return await this.$router.push('/');
       } catch (err) {
         this.message =
