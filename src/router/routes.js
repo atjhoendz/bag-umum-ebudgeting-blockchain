@@ -7,6 +7,7 @@ const LoginPage = () => import('@/views/auth/LoginPage');
 const DataPemohon = () => import('@/views/data-pemohon/DataPemohon');
 const InputSPD = () => import('@/views/data-pemohon/InputSPD');
 const TambahDataPemohon = () => import('@/views/data-pemohon/TambahData');
+const NotFoundPage = () => import('@/views/NotFoundPage');
 
 export const routes = [
   {
@@ -50,5 +51,10 @@ export const routes = [
     path: '/login',
     name: 'Login',
     component: LoginPage,
+  },
+  {
+    path: '*',
+    name: 'NotFoundPage',
+    component: NotFoundPage,
   },
 ];
