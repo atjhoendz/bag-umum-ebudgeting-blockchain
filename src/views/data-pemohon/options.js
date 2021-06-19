@@ -28,6 +28,26 @@ export const statusBerkasOptions = [
   },
 ];
 
+export const dataJabatan = [
+  { golongan: 'I A', pangkat: 'Juru Muda' },
+  { golongan: 'I B', pangkat: 'Juru Muda Tingkat 1' },
+  { golongan: 'I C', pangkat: 'Juru' },
+  { golongan: 'I D', pangkat: 'Juru Tingkat 1' },
+  { golongan: 'II A', pangkat: 'Pengatur Muda' },
+  { golongan: 'II B', pangkat: 'Pengatur Muda Tingkat 1' },
+  { golongan: 'II C', pangkat: 'Pengatur' },
+  { golongan: 'II D', pangkat: 'Pengatur Tingkat 1' },
+  { golongan: 'III A', pangkat: 'Penata Muda' },
+  { golongan: 'III B', pangkat: 'Penata Muda Tingkat 1' },
+  { golongan: 'III C', pangkat: 'Penata' },
+  { golongan: 'III D', pangkat: 'Penata Tingkat 1' },
+  { golongan: 'IV A', pangkat: 'Pembina' },
+  { golongan: 'IV B', pangkat: 'Pembina Tingkat 1' },
+  { golongan: 'IV C', pangkat: 'Pembina Utama Muda' },
+  { golongan: 'IV D', pangkat: 'Pembina Utama Madya' },
+  { golongan: 'IV E', pangkat: 'Pembina Utama' },
+];
+
 export const golonganOptions = [
   { label: 'I A', value: 'I A' },
   { label: 'I B', value: 'I B' },

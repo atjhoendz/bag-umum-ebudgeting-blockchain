@@ -144,7 +144,7 @@ import { UserService } from '../../services/user.service';
 import { LembagaService } from '../../services/lembaga.service';
 import { ValidationMessage } from '../../validations/message';
 import { pemohonValidations } from '../../validations/validationRules';
-import { golonganOptions } from './options';
+import { golonganOptions, dataJabatan } from './options';
 
 export default {
   name: 'TambahDataPemohon',
@@ -293,6 +293,12 @@ export default {
       }
 
       this.isLoading = false;
+    },
+  },
+  watch: {
+    'pemohonFormData.golongan': function(newVal) {
+      const jabatan = dataJabatan.find(item => item.golongan == newVal);
+      this.pemohonFormData.jabatan = jabatan.pangkat;
     },
   },
   async mounted() {
